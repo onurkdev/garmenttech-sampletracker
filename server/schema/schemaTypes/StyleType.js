@@ -13,7 +13,7 @@ const StyleType = new GraphQLObjectType({
     id: { type: GraphQLID },
     styleCode: { type: GraphQLString },
     styleName: { type: GraphQLString },
-    orderId: {
+    order: {
       type: OrderType,
       resolve(parent, args) {
         return Order.findById(parent.orderId);

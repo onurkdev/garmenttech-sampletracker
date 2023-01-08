@@ -42,7 +42,7 @@ const OrderType = new GraphQLObjectType({
     orderDate: { type: GraphQLString },
     deliveryDateInitial: { type: GraphQLString },
     deliveryDateUpdated: { type: GraphQLString },
-    orderStatus: { type: GraphQLString },
+    orderStatus: { type: GraphQLString }, // Open, Delivered, Cancelled
     orderQuantity: { type: GraphQLInt },
     orderSeason: { type: GraphQLString },
   }),
