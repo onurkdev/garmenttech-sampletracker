@@ -4,6 +4,8 @@ const cors = require('cors');
 const {graphqlHTTP } = require('express-graphql');
 const schema = require('./schema/schema');
 const connectDB = require('./config/db')
+const {applyMiddleware} = require('graphql-middleware');
+const {shield } = require('graphql-shield');
 const port = process.env.PORT || 8000;
 
 
