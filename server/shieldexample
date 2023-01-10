@@ -70,31 +70,17 @@ const resolvers = {
 const schema = makeExecutableSchema({ typeDefs, resolvers });
 
 // Pass `User-Id` as a header to the GraphQL server on request
-const isAuthenticated = rule()(async (parent, args, ctx, info) => {
-  return !!ctx.headers["user-id"];
-});
+// const isAuthenticated = rule()(async (parent, args, ctx, info) => {
+//   return !!ctx.headers["user-id"];
+// });
 
-const isAdmin = rule()(async (parent, args, ctx, info) => {
-  const user = users.find(({ id }) => id === ctx.headers["user-id"]);
+// const isAdmin = rule()(async (parent, args, ctx, info) => {
+//   const user = users.find(({ id }) => id === ctx.headers["user-id"]);
 
-  return user && user.role === "ADMIN";
-});
+//   return user && user.role === "ADMIN";
+// });
 
-const isNotAlreadyRegistered = inputRule()((yup) =>
-  yup.object({
-    input: yup.object({
-      name: yup.string().required(),
-      email: yup
-        .string()
-        .email()
-        .required()
-        .notOneOf(
-          users.map(({ email }) => email),
-          "A user exists with this email. Choose another."
-        ),
-    }),
-  })
-);
+
 
 const permissions = shield({
   Query: {

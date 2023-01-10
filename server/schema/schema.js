@@ -55,7 +55,7 @@ const {
 } = require('./queries/ClientQueries');
 
 
-RootQuery = new GraphQLObjectType({
+const RootQuery = new GraphQLObjectType({
     name: 'RootQueryType',
     fields: {
         //Sample Queries
@@ -102,6 +102,13 @@ RootQuery = new GraphQLObjectType({
 
 
 
+    }
+});
+
+const Mutation = new GraphQLObjectType({
+    name: 'Mutation',
+    fields: {
+        //Sample Mutations
     }
 });
 
