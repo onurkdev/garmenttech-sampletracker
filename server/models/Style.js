@@ -15,11 +15,13 @@ const styleSchema = new mongoose.Schema({
     },
     responsibleBuyer: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'User'
+        ref: 'User',
+        required: true
     },
     responsibleTech: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'User'
+        ref: 'User',
+        required: true
     },
     styleConfigSKU: {
         type: String
