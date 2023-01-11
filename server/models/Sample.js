@@ -20,7 +20,8 @@ const sampleSchema = new mongoose.Schema({
     },
     addedBy: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'User'
+        ref: 'User',
+        required: true
     },
     addedOn: {
         type: Date,
@@ -36,7 +37,8 @@ const sampleSchema = new mongoose.Schema({
     },
     assignedTo: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'User'
+        ref: 'User',
+        required: true
     },
     completedDate: {
         type: Date
