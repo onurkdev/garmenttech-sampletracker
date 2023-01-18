@@ -1,10 +1,8 @@
-const  SampleType = require('./schemaTypes/SampleType');
-const  StyleType = require('./schemaTypes/StyleType');
+
 
 const { GraphQLObjectType, GraphQLString, GraphQLID, GraphQLInt , GraphQLSchema, GraphQLList, GraphQLNonNull, GraphQLEnumType} = require('graphql');
 
 const {
-    sampleById,
     sampleById,
     sampleBySampleCode,
     allSamples,
@@ -90,7 +88,7 @@ const {
 
 
 const RootQuery = new GraphQLObjectType({
-    name: 'RootQueryType',
+    name: 'RootQuery',
     fields: {
         //Sample Queries
         sampleById: sampleById,
@@ -168,7 +166,9 @@ const Mutation = new GraphQLObjectType({
 
 
 
-const mainSchema = new GraphQLSchema({
+const schema = new GraphQLSchema({
     query: RootQuery,
     mutation: Mutation ,
 });
+
+module.exports = schema;

@@ -1,6 +1,5 @@
 const { GraphQLObjectType, GraphQLString, GraphQLID, GraphQLInt , GraphQLSchema, GraphQLList, GraphQLNonNull, GraphQLEnumType} = require('graphql');
-const StyleType = require('./StyleType');
-const Style = require('../../models/Style');
+
 const UserType = require('./UserType');
 const User = require('../../models/User');
 
@@ -9,12 +8,7 @@ const SampleType = new GraphQLObjectType({
   fields: () => ({
     id: { type: GraphQLID },
     sampleCode: { type: GraphQLString },
-    style: {
-      type: StyleType,
-      resolve(parent, args) {
-        return Style.findById(parent.styleId);
-      },
-    },
+    style: { type: GraphQLString },
     stage: { type: GraphQLString },
     status: { type: GraphQLString },
     addedBy: {

@@ -1,10 +1,13 @@
-const SampleType = require('./schemaTypes/SampleType');
 
-const { GraphQLObjectType, GraphQLString, GraphQLID, GraphQLInt , GraphQLSchema, GraphQLList, GraphQLNonNull, GraphQLEnumType} = require('graphql');
+
+const { GraphQLObjectType, GraphQLString, GraphQLID, GraphQLInt , GraphQLSchema, GraphQLNonNull, GraphQLEnumType} = require('graphql');
 const OrderType = require('./OrderType');
 const Order = require('../../models/Order');
 const UserType = require('./UserType');
 const User = require('../../models/User');
+const Sample = require('../../models/Sample');
+const SampleType = require('./SampleType');
+const GraphQLList = require('graphql').GraphQLList;
 
 
 const StyleType = new GraphQLObjectType({
@@ -38,7 +41,7 @@ const StyleType = new GraphQLObjectType({
       type: new GraphQLList(SampleType),
       resolve(parent, args) {
         return Sample.find({ styleId: parent.id });
-      },
+      }
     },
   }),
 });

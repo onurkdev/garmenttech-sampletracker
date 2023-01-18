@@ -18,9 +18,8 @@ app.use(cors());
 app.use(express.json());
 app.use(loginRouter);
 app.use ('/graphql', graphqlHTTP({
-    schemaAuth,
-    graphiql: process.env.NODE_ENV === 'development',
-    headerEditorEnabled: true,
+    schema: schemaAuth,
+    graphiql: {headerEditorEnabled: true}
 }))
 
 app.listen(port, console.log(`Server running on port ${port}`));

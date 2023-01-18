@@ -2,6 +2,9 @@ const { GraphQLObjectType, GraphQLString, GraphQLID, GraphQLInt , GraphQLSchema,
 
 const Order = require('../../models/Order');
 const OrderType = require('../schemaTypes/OrderType');
+const Style = require('../../models/Style');
+const StyleType = require('../schemaTypes/StyleType');
+
 
 const orderById = {
     type: OrderType,

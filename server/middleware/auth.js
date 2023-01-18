@@ -14,7 +14,7 @@ const isAuthenticated = rule()(async (parent, args, ctx, info) => {
 });
 
 const permissions = shield({
-  Query: {
+  RootQuery: {
     "*": isAuthenticated,
   },
   Mutation: {
