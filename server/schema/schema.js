@@ -68,6 +68,27 @@ const {
     deleteStyle
 } = require('./mutations/StyleMutations');
 
+//import all exports from OrderMutations.js
+const {
+    createOrder,
+    updateOrder,
+    deleteOrder
+} = require('./mutations/OrderMutations');
+//import all exports from SupplierMutations.js
+const {
+    createSupplier,
+    updateSupplier,
+    deleteSupplier
+} = require('./mutations/SupplierMutations');
+
+//import all exports from ClientMutations.js
+const {
+    createClient,
+    updateClient,
+    deleteClient
+} = require('./mutations/ClientMutations');
+
+
 const RootQuery = new GraphQLObjectType({
     name: 'RootQueryType',
     fields: {
@@ -126,13 +147,21 @@ const Mutation = new GraphQLObjectType({
         updateSample: updateSample,
         deleteSample: deleteSample,
         //Style Mutations
-        createStylke: createStyle,
+        createStyle: createStyle,
         updateStyle: updateStyle,
         deleteStyle: deleteStyle,
-        //TODO Order Mutations
-        //TODO Supplier Mutations
-        //TODO Client Mutations
-
+        //Order Mutations
+        createOrder: createOrder,
+        updateOrder: updateOrder,
+        deleteOrder: deleteOrder,
+        //Supplier Mutations
+        createSupplier: createSupplier,
+        updateSupplier: updateSupplier,
+        deleteSupplier: deleteSupplier,
+        //Client Mutations
+        createClient: createClient,
+        updateClient: updateClient,
+        deleteClient: deleteClient,
     }
 });
 
@@ -141,5 +170,5 @@ const Mutation = new GraphQLObjectType({
 
 const mainSchema = new GraphQLSchema({
     query: RootQuery,
-    //mutation: ,
+    mutation: Mutation ,
 });
