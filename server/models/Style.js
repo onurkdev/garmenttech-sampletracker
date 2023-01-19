@@ -41,11 +41,11 @@ const styleSchema = new mongoose.Schema({
 
 
 //virtual gelecek sample dan stylId ile
-styleSchema.virtual('receivedSamples', {
-    ref: 'Sample',
-    localField: '_id',
-    foreignField: 'styleId'
-})
+// styleSchema.virtual('receivedSamples', {
+//     ref: 'Sample',
+//     localField: '_id',
+//     foreignField: 'styleId'
+// })
 
 const Style = mongoose.model('Style', styleSchema);
 

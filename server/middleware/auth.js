@@ -1,16 +1,18 @@
 const { shield, rule, and, inputRule } = require("graphql-shield");
-const { User } = require("../models/User");
+const User  = require("../models/User");
+const jwt = require('jsonwebtoken')
 
 
 
 const isAuthenticated = rule()(async (parent, args, ctx, info) => {
-    const userId = ctx.headers["user-id"];
-    const token = ctx.headers["authorization"];
+    const token = ctx.headers.authorization;
     const tokenClean = token.replace("Bearer ", "");
-
-    const user = User.find(({ id }) => id === userId);
-
-    return !!user.tokens.find(token => token = tokenClean)  
+    const decoded = jwt.verify(tokenClean,process.env.JWTPASS)
+    const user = await User.findOne({_id: decoded._id,'tokens.token':token})
+    
+    let userExists = !!user
+    
+    return userExists
 });
 
 const permissions = shield({
@@ -20,7 +22,7 @@ const permissions = shield({
   Mutation: {
     "*": isAuthenticated,
   },
-});
+},{debug: true});
 
 module.exports = {
     permissions,

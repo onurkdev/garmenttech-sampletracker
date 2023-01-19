@@ -7,7 +7,7 @@ const createSample = {
     args: {
         sampleCode: { type: GraphQLString },
         sampleCode: { type: GraphQLNonNull(GraphQLString) },
-        style: {type: GraphQLNonNull(GraphQLID)},
+        styleId: {type: GraphQLNonNull(GraphQLID)},
         stage: { type: GraphQLNonNull(GraphQLString) },
         status: { type: GraphQLNonNull(GraphQLString) },
         addedBy: { type: GraphQLNonNull(GraphQLID)},
@@ -25,7 +25,7 @@ const createSample = {
         {
             const sample = new Sample({
                 sampleCode: args.sampleCode,
-                style: args.style,
+                styleId: args.styleId,
                 stage: args.stage,
                 status: args.status,
                 addedBy: args.addedBy,

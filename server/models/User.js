@@ -47,23 +47,23 @@ const userSchema = new mongoose.Schema({
     timestamps:true
 })
 
-userSchema.virtual('myAddedSamples', {
-    ref: 'Sample',
-    localField: '_id',
-    foreignField: 'addedBy'
-})
+// userSchema.virtual('myAddedSamples', {
+//     ref: 'Sample',
+//     localField: '_id',
+//     foreignField: 'addedBy'
+// })
 
-userSchema.virtual('myAssignedSamples', {
-    ref: 'Sample',
-    localField: '_id',
-    foreignField: 'assignedTo'
-})
+// userSchema.virtual('myAssignedSamples', {
+//     ref: 'Sample',
+//     localField: '_id',
+//     foreignField: 'assignedTo'
+// })
 
-userSchema.virtual('myStyles', {
-    ref: 'Style',
-    localField: '_id',
-    foreignField: 'responsibleBuyer'
-})
+// userSchema.virtual('myStyles', {
+//     ref: 'Style',
+//     localField: '_id',
+//     foreignField: 'responsibleBuyer'
+// })
 
 
 userSchema.set('toObject', { virtuals: true });

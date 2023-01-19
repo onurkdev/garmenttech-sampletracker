@@ -42,11 +42,11 @@ const orderSchema = new mongoose.Schema({
 
 });
 
-orderSchema.virtual('styles', {
-    ref: 'Style',
-    localField: '_id',
-    foreignField: 'orderId'
-})
+// orderSchema.virtual('styles', {
+//     ref: 'Style',
+//     localField: '_id',
+//     foreignField: 'orderId'
+// })
 
 orderSchema.set('toJSON', { virtuals: true })
 orderSchema.set('toObject', { virtuals: true })

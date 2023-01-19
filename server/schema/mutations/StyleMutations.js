@@ -7,7 +7,7 @@ const createStyle = {
     args: {
         styleCode: { type: GraphQLNonNull(GraphQLString) },
         styleName: { type: GraphQLString },
-        order: { type: GraphQLID },
+        orderId: { type: GraphQLID },
         responsibleBuyer: { type: GraphQLID },
         responsibleTech: { type: GraphQLID },
         styleConfigSKU: { type: GraphQLString },
@@ -18,7 +18,7 @@ const createStyle = {
         const style = new Style({
             styleCode: args.styleCode,
             styleName: args.styleName,
-            order: args.order,
+            orderId: args.orderId,
             responsibleBuyer: args.responsibleBuyer,
             responsibleTech: args.responsibleTech,
             styleConfigSKU: args.styleConfigSKU,

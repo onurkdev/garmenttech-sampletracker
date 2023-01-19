@@ -8,7 +8,7 @@ const SampleType = new GraphQLObjectType({
   fields: () => ({
     id: { type: GraphQLID },
     sampleCode: { type: GraphQLString },
-    style: { type: GraphQLString },
+    styleId: { type: GraphQLID },
     stage: { type: GraphQLString },
     status: { type: GraphQLString },
     addedBy: {

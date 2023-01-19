@@ -9,7 +9,7 @@ loginRouter.post('/users/login', async (req, res) => {
         const token = await user.generateAuthToken()
         res.send({user, token})
     } catch (e) {
-        return res.status(400).send()
+        return res.status(400).send(e.message)
     }
 })
 

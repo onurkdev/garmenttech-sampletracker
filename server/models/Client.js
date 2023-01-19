@@ -14,11 +14,11 @@ const clientSchema = new mongoose.Schema({
     
 })
 
-clientSchema.virtual('orders', {
-    ref: 'Order',
-    localField: '_id',
-    foreignField: 'clientId'
-})
+// clientSchema.virtual('orders', {
+//     ref: 'Order',
+//     localField: '_id',
+//     foreignField: 'clientId'
+// })
 
 clientSchema.set('toJSON', { virtuals: true })
 clientSchema.set('toObject', { virtuals: true })
