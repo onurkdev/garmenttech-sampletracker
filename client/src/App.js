@@ -3,6 +3,7 @@ import { ApolloProvider , ApolloClient, InMemoryCache} from '@apollo/client';
 import NotFound from "./pages/NotFound";
 import LoginPage from "./pages/LoginPage";
 import Home from "./pages/Home";
+import Dashboard from "./pages/Dashboard/Dashboard";
 
 
 const cache = new InMemoryCache({
@@ -28,6 +29,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/users/login" element={<LoginPage />} />
         <Route path="*" element={<NotFound />} />
+        <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
      </Router>
     </ApolloProvider>

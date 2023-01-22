@@ -27,7 +27,9 @@ export default function NotFound() {
             flexDirection: 'column',
             alignItems: 'center',
           }}
-        ></Box>
+        >
+          <Typography component="h1" variant="h5">Page Not Found</Typography>
+        </Box>
     
     </Container>    
     </ThemeProvider>

@@ -12,6 +12,7 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { useNavigate } from "react-router-dom"
 
 function Copyright(props) {
   return (
@@ -36,8 +37,14 @@ export default function LoginPage() {
       email: data.get('email'),
       password: data.get('password'),
     });
-  };
+    navigate("/dashboard")
+    
+    
 
+
+  };
+  const navigate = useNavigate();
+  
   return (
     <ThemeProvider theme={theme}>
       <Container component="main" maxWidth="xs">
